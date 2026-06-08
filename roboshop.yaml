@@ -32,7 +32,7 @@
     amazon.aws.route53:
       state: present
       zone: "{{ domain_name }}"
-      record: "{{ item.item }}.{{ domain_name }}" #mongodb.daws90s.shop
+      record: "{{ item.item }}.{{ domain_name }}" #mongodb.vijaansh.online
       type: A
       ttl: 1
       value: "{{ item.instances[0].private_ip_address }}"
@@ -44,7 +44,7 @@
     amazon.aws.route53:
       state: present
       zone: "{{ domain_name }}"
-      record: "{{ domain_name }}" #daws90s.shop
+      record: "{{ domain_name }}" #vijaansh.online
       type: A
       ttl: 1
       value: "{{ item.instances[0].public_ip_address }}"
@@ -58,7 +58,7 @@
     amazon.aws.route53:
       state: absent
       zone: "{{ domain_name }}"
-      record: "{{ item }}.{{ domain_name }}" # mongodb.daws90s.shop
+      record: "{{ item }}.{{ domain_name }}" # mongodb.vijaansh.online
       ttl: 1
       type: A
     loop: "{{ instances  }}"  
@@ -68,7 +68,7 @@
     amazon.aws.route53:
       state: absent
       zone: "{{ domain_name }}"
-      record: "{{ domain_name }}" # daws90s.shop
+      record: "{{ domain_name }}" # vijaansh.online
       ttl: 1
       type: A
     loop: "{{ instances  }}"  
